@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { img } from '../data';
+import { MemoryImage } from '../gl/MemoryImage';
 import { Icon } from './Icon';
+import { Head } from './Reveal';
 import { AvatarStack, Dot } from './People';
 
 const BEATS = [
@@ -56,11 +58,11 @@ export function Story() {
   return (
     <section className="sec" aria-labelledby="lived-h">
       <div className="wrap">
-        <div className="head" style={{ marginBottom: 0 }}>
+        <Head style={{ marginBottom: 0 }}>
           <h2 id="lived-h">
             Done isn’t a score. It’s a <em>memory.</em>
           </h2>
-        </div>
+        </Head>
         <div className="story">
           <div className="beats">
             {BEATS.map((b, i) => (
@@ -148,7 +150,7 @@ export function Story() {
               </div>
               <div className="layer l3">
                 <div className="mem">
-                  <img src={img('potter.jpg')} alt="" />
+                  <MemoryImage src={img('potter.jpg')} alt="" />
                   <q>{LINE}</q>
                   <div className="f">
                     <AvatarStack ids={['halima', 'mum', 'ade']} />

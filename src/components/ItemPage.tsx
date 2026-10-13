@@ -1,5 +1,7 @@
 import { img } from '../data';
+import { MemoryImage } from '../gl/MemoryImage';
 import { Icon } from './Icon';
+import { Head } from './Reveal';
 import { Dot } from './People';
 
 const TODOS = [
@@ -12,15 +14,15 @@ export function ItemPage() {
   return (
     <section className="sec" aria-labelledby="page-h">
       <div className="wrap">
-        <div className="head">
+        <Head>
           <h2 id="page-h">
             Every item is a page to <em>write on.</em>
           </h2>
           <p>Plans, links and lists live on the item, not lost in a group chat.</p>
-        </div>
+        </Head>
         <article className="doc" aria-label="Example item page">
           <div className="ph">
-            <img src={img('obudu.jpg')} alt="Cable cars at Obudu Mountain Resort, Cross River" />
+            <MemoryImage src={img('obudu.jpg')} alt="Cable cars at Obudu Mountain Resort, Cross River" />
           </div>
           <div className="body">
             <h3>Ride the Obudu cable car</h3>

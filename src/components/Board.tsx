@@ -1,5 +1,6 @@
-import { useState, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import { SOMEDAY, SOMEDAY_TOTAL, THIS_SUMMER, type ListItem } from '../data';
+import { useTilt } from '../hooks/useTilt';
 import { Icon } from './Icon';
 import { ListRow } from './ListRow';
 import { AvatarStack } from './People';
@@ -10,6 +11,8 @@ export function Board() {
   const [added, setAdded] = useState<Set<string>>(new Set());
   const [done, setDone] = useState<Set<string>>(new Set());
   const [draft, setDraft] = useState('');
+  const board = useRef<HTMLDivElement>(null);
+  useTilt(board);
 
   const toggle = (id: string) =>
     setDone((cur) => {
@@ -34,7 +37,7 @@ export function Board() {
   );
 
   return (
-    <div className="board">
+    <div className="board" ref={board}>
       <header>
         <h2>Together</h2>
         <div className="grp">

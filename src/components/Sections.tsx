@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { ALBUM, CROSSED_OFF, CURRENT_STEP, STEPS, img } from '../data';
+import { MemoryImage } from '../gl/MemoryImage';
+import { useReveal } from '../hooks/useReveal';
 import { Icon } from './Icon';
+import { Head } from './Reveal';
 import { JoinForm } from './JoinForm';
 import { Avatar, AvatarStack, Dot } from './People';
 
@@ -8,16 +11,16 @@ export function Album() {
   return (
     <section className="sec" aria-labelledby="album-h">
       <div className="wrap">
-        <div className="head">
+        <Head>
           <h2 id="album-h">
             The list becomes the <em>album.</em>
           </h2>
           <p>Only your people. Nothing public, nothing to like.</p>
-        </div>
+        </Head>
         <div className="album">
           {ALBUM.map((m) => (
             <div key={m.photo} className="mem">
-              <img src={img(m.photo)} alt={m.alt} />
+              <MemoryImage src={img(m.photo)} alt={m.alt} />
               <q>{m.quote}</q>
               <div className="f">
                 <AvatarStack ids={m.people} />
@@ -35,12 +38,12 @@ export function Learning() {
   return (
     <section className="sec" aria-labelledby="learn-h">
       <div className="wrap">
-        <div className="head">
+        <Head>
           <h2 id="learn-h">
             A path for what you want to <em>learn.</em>
           </h2>
           <p>Steps, notes, and always knowing where you are.</p>
-        </div>
+        </Head>
         <div className="topic">
           <div className="h">
             <h3>Yoruba</h3>
@@ -78,17 +81,18 @@ export function Learning() {
 }
 
 export function CrossedOff() {
+  const [list, shown] = useReveal<HTMLUListElement>(0.3);
   return (
     <section className="sec" aria-labelledby="wont-h">
       <div className="wrap">
-        <div className="head">
+        <Head>
           <h2 id="wont-h">
             Crossed off on <em>purpose.</em>
           </h2>
-        </div>
-        <ul className="struck">
-          {CROSSED_OFF.map((c) => (
-            <li key={c.thing}>
+        </Head>
+        <ul className={shown ? 'struck in' : 'struck'} ref={list}>
+          {CROSSED_OFF.map((c, i) => (
+            <li key={c.thing} style={{ '--i': i } as CSSProperties}>
               <s>{c.thing}</s>
               <span>{c.why}</span>
             </li>
