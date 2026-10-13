@@ -1,15 +1,7 @@
-# Local drafts
-index-v*.html
+node_modules
+dist
 
-# Photos not used by the page
-img/aurora.jpg
-img/balloons.jpg
-img/camping.jpg
-img/idanre.jpg
-img/pottery.jpg
-img/sakura.jpg
-img/spanish.jpg
-img/tent.jpg
-img/tram.jpg
+# Local drafts of the static page
+drafts
 
 .DS_Store
