@@ -1,11 +1,10 @@
 import { useRef } from 'react';
-import { CREDITS } from '../data';
 import { useFitText } from '../hooks/useFitText';
 import { useInView } from '../hooks/useInView';
 
-export function Footer({ font }: { font: string }) {
+export function Footer() {
   const giant = useRef<HTMLDivElement>(null);
-  useFitText(giant, { fill: 0.985, font });
+  useFitText(giant, { fill: 0.985 });
   const ticked = useInView(giant, { threshold: 0.6 });
 
   return (
@@ -30,19 +29,6 @@ export function Footer({ font }: { font: string }) {
         </div>
         <div className="foot-base">
           <span>Oneday, 2026</span>
-          <details className="credits">
-            <summary>Photo credits</summary>
-            <ul>
-              {CREDITS.map((c) => (
-                <li key={c.url}>
-                  <a href={c.url} target="_blank" rel="noopener">
-                    {c.label}
-                  </a>
-                  , {c.author}, {c.license}
-                </li>
-              ))}
-            </ul>
-          </details>
         </div>
       </div>
     </footer>

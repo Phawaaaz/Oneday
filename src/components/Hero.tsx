@@ -20,10 +20,10 @@ export function Nav() {
   );
 }
 
-export function Hero({ font }: { font: string }) {
+export function Hero() {
   const h1 = useRef<HTMLHeadingElement>(null);
   const section = useRef<HTMLElement>(null);
-  useFitText(h1, { lines: true, max: 150, font });
+  useFitText(h1, { lines: true, max: 150 });
 
   let n = 0;
   const words = (text: string) =>

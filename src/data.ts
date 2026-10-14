@@ -63,34 +63,3 @@ export const CREDITS = [
   { label: 'Nike Art Gallery', author: 'FrankvEck', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Lagos_Lekki_Nike_Art_Gallery_Aug_2026_IMG_6978b.jpg' },
   { label: 'Lekki–Ikoyi Link Bridge', author: 'Olasunkanmiariyo', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/wiki/File:Lekki_link_bridge_at_night.jpg' },
 ];
-
-// Remix options. Grounds and accents come from the Bear, Day One and Bucket palettes.
-// text = readable accent on every ground (at least 4.5:1); on = text colour on the accent fill.
-export const GROUNDS = {
-  paper: { name: 'Paper', paper: '#FAF9F7', surface: '#FFFFFF', ink: '#1F2024', ink2: '#5E6066', ink3: '#A3A5AB', line: '#E8E6E2' },
-  sand: { name: 'Sand', paper: '#F4EFE7', surface: '#FFFDF9', ink: '#2A2622', ink2: '#655D53', ink3: '#A89F93', line: '#E4DCD0' },
-  mist: { name: 'Mist', paper: '#F4F8FB', surface: '#FFFFFF', ink: '#14212E', ink2: '#56626E', ink3: '#9AA5B0', line: '#E1E8EE' },
-  lilac: { name: 'Lilac', paper: '#F6F5FA', surface: '#FFFFFF', ink: '#21163A', ink2: '#5E5670', ink3: '#A29DB0', line: '#E6E3EE' },
-};
-
-export const ACCENTS = {
-  red: { name: 'Bear red', accent: '#C9372C', text: '#B3301F', on: '#FFFFFF' },
-  rust: { name: 'Rust', accent: '#C2410C', text: '#A8380A', on: '#FFFFFF' },
-  sky: { name: 'Day One sky', accent: '#2BB3EA', text: '#0A6E9E', on: '#14212E' },
-  blue: { name: 'Bucket blue', accent: '#2F6FE0', text: '#2560C8', on: '#FFFFFF' },
-  yellow: { name: 'Bucket yellow', accent: '#F2D543', text: '#7A5F00', on: '#21163A' },
-  magenta: { name: 'Magenta', accent: '#B42AA0', text: '#A1258F', on: '#FFFFFF' },
-  green: { name: 'Green', accent: '#17785A', text: '#156B51', on: '#FFFFFF' },
-};
-
-export const FONTS: Record<string, { name: string; family: string; features?: string }> = {
-  geist: { name: 'Geist', family: '"Geist", system-ui, sans-serif' },
-  inter: { name: 'Inter', family: '"Inter", system-ui, sans-serif', features: '"cv11", "ss01"' },
-  tight: { name: 'Inter Tight', family: '"Inter Tight", system-ui, sans-serif', features: '"cv11", "ss01"' },
-  manrope: { name: 'Manrope', family: '"Manrope", system-ui, sans-serif' },
-  jakarta: { name: 'Plus Jakarta Sans', family: '"Plus Jakarta Sans", system-ui, sans-serif' },
-  schibsted: { name: 'Schibsted Grotesk', family: '"Schibsted Grotesk", system-ui, sans-serif' },
-};
-
-export type GroundId = keyof typeof GROUNDS;
-export type AccentId = keyof typeof ACCENTS;

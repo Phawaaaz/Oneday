@@ -18,13 +18,13 @@ npm run preview  # serve the production build
 ```
 src/
   App.tsx              page layout
-  data.ts              list items, memories, learning steps, credits, palettes
+  data.ts              list items, memories, learning steps, credits
   styles.css           all styles
-  components/          Hero, Board (the live list), ItemPage, Story, Sections, Footer, RemixBar
-  hooks/               useRemix (fonts and colours), useFitText, useInView
+  components/          Hero, Board (the live list), ItemPage, Story, Sections, Footer
+  hooks/               useFitText, useInView
 public/img/            photos
 ```
 
-The remix bar (bottom right) lets you try fonts and colours on the live page; the choice is kept in the URL so you can share it.
+The page uses Geist on a warm paper ground with Bear red (#C9372C) as the accent.
 
-Photos are from Wikimedia Commons; credits are listed in the page footer.
+Photos are from Wikimedia Commons; credits are listed in `src/data.ts`.
